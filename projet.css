@@ -34,8 +34,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:24px 52px;display:fl
 .gi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.16,1,.3,1)}
 .gi:hover img{transform:scale(1.03)}
 .tall{aspect-ratio:3/4}.wide{aspect-ratio:16/8}.sq{aspect-ratio:1/1}.cinema{aspect-ratio:21/8}.med{aspect-ratio:4/3}
-.ba-section{padding:48px 3px 3px}
-.ba-title{padding:0 52px 24px;font-family:var(--fs);font-size:clamp(26px,3.5vw,44px);font-weight:300;font-style:italic;color:var(--dark)}
+.ba-section{padding:0 0 3px}
+.ba-title{padding:48px 52px 24px;font-family:var(--fs);font-size:clamp(26px,3.5vw,44px);font-weight:300;font-style:italic;color:var(--dark)}
 .ba-wrap{position:relative;overflow:hidden;cursor:ew-resize;user-select:none;aspect-ratio:16/8}
 .ba-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .ba-after{z-index:1;position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
