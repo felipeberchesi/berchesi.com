@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Maison PI — Rénovation complète Arthès | Berchesi Architecture</title>
+<meta name="description" content="Maison PI — Rénovation intégrale d'une grange ancienne à Arthès, Tarn. Double hauteur, mezzanine bibliothèque, matériaux chaleureux. Berchesi Architecture."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Jost:wght@200;300;400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="projet.css"/>
+</head>
+<body>
+<div id="cur"></div>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="img/logo_mono.png" alt="Berchesi Architecture"/><span class="nav-name">Architecture & Interiorism</span></a>
+  <a href="index.html#projets" class="nav-back">← Tous les projets</a>
+</nav>
+<div class="proj-hero">
+  <img src="img/pi_hero.jpg" alt="Maison PI — Rénovation grange Arthès Tarn"/>
+  <div class="phov"></div>
+  <div class="phi">
+    <p class="proj-tag">Rénovation complète — Tarn</p>
+    <h1 class="proj-title">Maison PI</h1>
+  </div>
+</div>
+<div class="meta-bar">
+  <div class="mi"><label>Lieu</label><span>Arthès, Tarn</span></div>
+  <div class="mi"><label>Type</label><span>Rénovation complète</span></div>
+  <div class="mi"><label>Mission</label><span>Architecture & Interiorism</span></div>
+  <div class="mi"><label>Surface</label><span>258 m²</span></div>
+</div>
+<div class="proj-desc">
+  <p class="pdlbl rv">Description</p>
+  <div class="pdbody rv d1">
+    <p>Rénovation intégrale d'une maison ancienne à Arthès, dans le Tarn. Sans extension ni modification de volumétrie — redonner vie à un bâti rural authentique tout en l'adaptant aux exigences contemporaines de confort et de performance énergétique.</p>
+    <p>Le projet valorise le caractère architectural d'origine : murs en maçonnerie ancienne, charpente bois apparente, double hauteur. L'enduit blanc cassé RAL 9010, les menuiseries aluminium gris quartz RAL 7039G et les volets bois vert gris pastel RAL 7033 forment une palette sobre qui révèle le bâti sans le dénaturer.</p>
+    <p>À l'intérieur, la double hauteur devient le cœur du projet — mezzanine bibliothèque, cheminée, matériaux chaleureux bois et pierre. Une verrière en toiture apporte de la lumière naturelle dans l'espace central.</p>
+  </div>
+</div>
+
+<!-- BEFORE/AFTER SLIDER 1 — Entrée/Escalier -->
+<div class="ba-section">
+  <p class="ba-title">Avant / Après</p>
+  <div class="ba-wrap" id="baw1">
+    <img class="ba-after" src="img/pi_apres2.jpg" alt="Maison PI après — entrée escalier"/>
+    <img class="ba-before" id="bab1" src="img/pi_avant2.jpg" alt="Maison PI avant — grange escalier"/>
+    <div class="ba-hdl" id="bah1"><div class="ba-btn">◀▶</div></div>
+    <span class="ba-lb l">AVANT</span>
+    <span class="ba-lb r">APRÈS</span>
+  </div>
+</div>
+
+<div class="gallery" style="margin-top:3px">
+  <div class="gr r3">
+    <div class="gi tall rv"><img src="img/pi_3.jpg" alt="Maison PI séjour double hauteur"/></div>
+    <div class="gi tall rv d1"><img src="img/pi_4.jpg" alt="Maison PI mezzanine bibliothèque"/></div>
+    <div class="gi tall rv d2"><img src="img/pi_5.jpg" alt="Maison PI entrée escalier"/></div>
+  </div>
+  <div class="gr r3">
+    <div class="gi sq rv"><img src="img/pi_before2.jpg" alt="Maison PI avant état initial"/></div>
+    <div class="gi sq rv d1"><img src="img/pi_before3.jpg" alt="Maison PI avant grange"/></div>
+    <div class="gi sq rv d2"><img src="img/pi_before4.jpg" alt="Maison PI avant cuisine"/></div>
+  </div>
+</div>
+
+<!-- BEFORE/AFTER SLIDER 2 — Séjour double hauteur -->
+<div class="ba-section">
+  <div class="ba-wrap" id="baw2">
+    <img class="ba-after" src="img/pi_apres1.jpg" alt="Maison PI après — séjour double hauteur"/>
+    <img class="ba-before" id="bab2" src="img/pi_avant1.jpg" alt="Maison PI avant — grange"/>
+    <div class="ba-hdl" id="bah2"><div class="ba-btn">◀▶</div></div>
+    <span class="ba-lb l">AVANT</span>
+    <span class="ba-lb r">APRÈS</span>
+  </div>
+</div>
+
+<div class="pnav">
+  <a href="projet-ba.html" class="pv"><span class="pnav-lbl">← Projet précédent</span><span class="pnav-name">Maison BA</span></a>
+  <a href="index.html#projets" class="pnav-home">Tous les projets</a>
+  <a href="projet-acqs.html" class="nx"><span class="pnav-lbl">Projet suivant →</span><span class="pnav-name">ACQS Arena</span></a>
+</div>
+<footer><span>© 2025 Berchesi / Architecture & Interiorism</span><span>Saint-Paul-lès-Dax, Landes</span><span>Architecte DPLG N°091339</span></footer>
+<script>
+const cur=document.getElementById('cur');
+document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
+document.querySelectorAll('a,.gi,.ba-wrap').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('h'));el.addEventListener('mouseleave',()=>cur.classList.remove('h'));});
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});},{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+function initSlider(wrapId,beforeId,handleId){
+  const baw=document.getElementById(wrapId),bab=document.getElementById(beforeId),bah=document.getElementById(handleId);
+  if(!baw||!bab||!bah)return;
+  let drag=false;
+  function upd(x){const r=baw.getBoundingClientRect();const p=Math.max(0,Math.min(100,(x-r.left)/r.width*100));bab.style.clipPath='inset(0 '+(100-p)+'% 0 0)';bah.style.left=p+'%';}
+  baw.addEventListener('mousedown',e=>{drag=true;upd(e.clientX);});
+  window.addEventListener('mousemove',e=>{if(drag)upd(e.clientX);});
+  window.addEventListener('mouseup',()=>drag=false);
+  baw.addEventListener('touchstart',e=>{drag=true;upd(e.touches[0].clientX);},{passive:true});
+  window.addEventListener('touchmove',e=>{if(drag)upd(e.touches[0].clientX);},{passive:true});
+  window.addEventListener('touchend',()=>drag=false);
+}
+initSlider('baw1','bab1','bah1');
+initSlider('baw2','bab2','bah2');
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Maison BA — Construction neuve Soustons | Berchesi Architecture</title>
+<meta name="description" content="Maison BA — Construction neuve avec piscine à Soustons, Landes. Pierre naturelle, bardage Douglas Hazelnut brûlé, volumétrie fractionnée. Berchesi Architecture."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Jost:wght@200;300;400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="projet.css"/>
+</head>
+<body>
+<div id="cur"></div>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="img/logo_mono.png" alt="Berchesi Architecture"/><span class="nav-name">Architecture & Interiorism</span></a>
+  <a href="index.html#projets" class="nav-back">← Tous les projets</a>
+</nav>
+<div class="proj-hero">
+  <img src="img/ba_hero.jpg" alt="Maison BA — Construction neuve Soustons"/>
+  <div class="phov"></div>
+  <div class="phi">
+    <p class="proj-tag">Construction neuve — En cours</p>
+    <h1 class="proj-title">Maison BA — Construction neuve Soustons</h1>
+  </div>
+</div>
+<div class="meta-bar">
+  <div class="mi"><label>Lieu</label><span>Soustons, Landes</span></div>
+  <div class="mi"><label>Type</label><span>Construction neuve</span></div>
+  <div class="mi"><label>Mission</label><span>MOE complète</span></div>
+  <div class="mi"><label>Statut</label><span>Livré</span></div>
+</div>
+<div class="proj-desc">
+  <p class="pdlbl rv">Description</p>
+  <div class="pdbody rv d1"><p>Construction d'une maison individuelle avec piscine à Soustons, dans les Landes. Le projet propose une volumétrie fractionnée — un volume principal R+1 complété par des volumes de plain-pied — permettant une insertion mesurée dans le tissu résidentiel existant tout en offrant une écriture contemporaine assumée.</p><p>Le traitement des façades articule trois matériaux complémentaires : un soubassement en pierre naturelle au rez-de-chaussée, un enduit teinté dans la même tonalité, et un bardage en bois brûlé Douglas Hazelnut à l'étage, qui allège visuellement le volume supérieur et assure la transition avec la végétation environnante.</p><p>Les menuiseries aluminium anthracite RAL 7016 unifient l'ensemble. La piscine extérieure de 24m² est implantée dans la partie la plus privative du jardin. Projet actuellement en cours.</p></div>
+</div>
+<div class="gallery"><div class="gr r75" style="align-items:stretch"><div class="gi rv" style="aspect-ratio:auto;min-height:400px"><img src="img/ba_hero.jpg" alt="Maison BA render extérieur"/></div><div class="gi tall rv d1"><img src="img/ba_2.jpg" alt="Maison BA intérieur double hauteur"/></div></div><div class="gr r1"><div class="gi cinema rv"><img src="img/ba_3.jpg" alt="Maison BA living pierre bois"/></div></div></div>
+
+<div class="pnav">
+  <a href="projet-se.html" class="pv"><span class="pnav-lbl">← Projet précédent</span><span class="pnav-name">Maison SE</span></a>
+  <a href="index.html#projets" class="pnav-home">Tous les projets</a>
+  <a href="projet-pi.html" class="nx"><span class="pnav-lbl">Projet suivant →</span><span class="pnav-name">Maison PI</span></a>
+</div>
+<footer><span>© 2025 Berchesi / Architecture & Interiorism</span><span>Saint-Paul-lès-Dax, Landes</span><span>Architecte DPLG N°091339</span></footer>
+<script>
+const cur=document.getElementById('cur');
+document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
+document.querySelectorAll('a,.gi').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('h'));el.addEventListener('mouseleave',()=>cur.classList.remove('h'));});
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});},{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+const bw=document.querySelector('.ba-wrap');
+if(bw){
+  const bef=bw.querySelector('.ba-before'),hdl=bw.querySelector('.ba-hdl');
+  let drag=false;
+  function upd(x){const r=bw.getBoundingClientRect();const p=Math.max(0,Math.min(100,(x-r.left)/r.width*100));bef.style.clipPath='inset(0 '+(100-p)+'% 0 0)';hdl.style.left=p+'%';}
+  bw.addEventListener('mousedown',e=>{drag=true;upd(e.clientX);});
+  window.addEventListener('mousemove',e=>{if(drag)upd(e.clientX);});
+  window.addEventListener('mouseup',()=>drag=false);
+  bw.addEventListener('touchstart',e=>{drag=true;upd(e.touches[0].clientX);},{passive:true});
+  window.addEventListener('touchmove',e=>{if(drag)upd(e.touches[0].clientX);},{passive:true});
+  window.addEventListener('touchend',()=>drag=false);
+}
+</script>
+</body>
+</html>

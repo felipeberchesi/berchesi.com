@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Maison LA — Extension Hossegor | Berchesi Architecture</title>
+<meta name="description" content="Maison LA — Extension d'une maison individuelle à Hossegor, Landes. Ossature bois, pin traité, chênes lièges préservés. Berchesi Architecture."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Jost:wght@200;300;400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="projet.css"/>
+</head>
+<body>
+<div id="cur"></div>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="img/logo_mono.png" alt="Berchesi Architecture"/><span class="nav-name">Architecture & Interiorism</span></a>
+  <a href="index.html#projets" class="nav-back">← Tous les projets</a>
+</nav>
+<div class="proj-hero">
+  <img src="img/la_hero.jpg" alt="Maison LA — Extension Hossegor"/>
+  <div class="phov"></div>
+  <div class="phi">
+    <p class="proj-tag">Extension & Rénovation — Landes</p>
+    <h1 class="proj-title">Maison LA — Extension Hossegor</h1>
+  </div>
+</div>
+<div class="meta-bar">
+  <div class="mi"><label>Lieu</label><span>Hossegor, Landes</span></div>
+  <div class="mi"><label>Type</label><span>Extension</span></div>
+  <div class="mi"><label>Mission</label><span>MOE complète</span></div>
+  <div class="mi"><label>Statut</label><span>Livré</span></div>
+</div>
+<div class="proj-desc">
+  <p class="pdlbl rv">Description</p>
+  <div class="pdbody rv d1"><p>Extension d'une maison individuelle à Hossegor, dans les Landes. Le programme crée quatre nouveaux espaces nuit, dont une suite parentale, greffés sur le rez-de-chaussée existant entièrement repensé.</p><p>La construction articule maçonnerie traditionnelle en rez-de-chaussée et ossature bois à l'étage, avec un habillage en pin traité pour l'ensemble de la façade. Le projet a été pensé en totale symbiose avec la flore existante — l'extension est construite autour des chênes lièges du jardin, espèce emblématique des Landes, afin de les préserver et les valoriser.</p><p>Le choix du pin local, la terrasse bois et la végétation dense font de cette maison un projet pleinement ancré dans son territoire.</p></div>
+</div>
+<div class="gallery"><div class="gr r57" style="align-items:stretch"><div class="gi tall rv"><img src="img/la_2.jpg" alt="Maison LA façade pin"/></div><div class="gi rv d1" style="aspect-ratio:auto;min-height:0"><img src="img/la_3.jpg" alt="Maison LA terrasse"/></div></div><div class="gr r3"><div class="gi sq rv"><img src="img/la_4.jpg" alt="Maison LA ensemble"/></div><div class="gi sq rv d1"><img src="img/la_5.jpg" alt="Maison LA volumétrie"/></div><div class="gi sq rv d2"><img src="img/la_6.jpg" alt="Maison LA détail volet"/></div></div><div class="gr r2"><div class="gi med rv"><img src="img/la_7.jpg" alt="Maison LA chantier"/></div><div class="gi med rv d1"><img src="img/la_8.jpg" alt="Maison LA ossature bois"/></div></div></div>
+
+<div class="pnav">
+  <a href="projet-mi.html" class="pv"><span class="pnav-lbl">← Projet précédent</span><span class="pnav-name">Maison MI</span></a>
+  <a href="index.html#projets" class="pnav-home">Tous les projets</a>
+  <a href="projet-he.html" class="nx"><span class="pnav-lbl">Projet suivant →</span><span class="pnav-name">Maison HE</span></a>
+</div>
+<footer><span>© 2025 Berchesi / Architecture & Interiorism</span><span>Saint-Paul-lès-Dax, Landes</span><span>Architecte DPLG N°091339</span></footer>
+<script>
+const cur=document.getElementById('cur');
+document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
+document.querySelectorAll('a,.gi').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('h'));el.addEventListener('mouseleave',()=>cur.classList.remove('h'));});
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});},{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+const bw=document.querySelector('.ba-wrap');
+if(bw){
+  const bef=bw.querySelector('.ba-before'),hdl=bw.querySelector('.ba-hdl');
+  let drag=false;
+  function upd(x){const r=bw.getBoundingClientRect();const p=Math.max(0,Math.min(100,(x-r.left)/r.width*100));bef.style.clipPath='inset(0 '+(100-p)+'% 0 0)';hdl.style.left=p+'%';}
+  bw.addEventListener('mousedown',e=>{drag=true;upd(e.clientX);});
+  window.addEventListener('mousemove',e=>{if(drag)upd(e.clientX);});
+  window.addEventListener('mouseup',()=>drag=false);
+  bw.addEventListener('touchstart',e=>{drag=true;upd(e.touches[0].clientX);},{passive:true});
+  window.addEventListener('touchmove',e=>{if(drag)upd(e.touches[0].clientX);},{passive:true});
+  window.addEventListener('touchend',()=>drag=false);
+}
+</script>
+</body>
+</html>

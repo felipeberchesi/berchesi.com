@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Maison JA — Rénovation intérieure | Berchesi Architecture</title>
+<meta name="description" content="Maison JA — Rénovation complète d'une maison individuelle à Sames, Pays Basque. Pierre apparente, charpente bois, cheminée contemporaine. Berchesi Architecture, Landes."/>
+<link rel="canonical" href="https://www.berchesi.com/projet-ja.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@200;300;400&display=swap" rel="stylesheet"/>
+<style>
+:root{--cream:#F4F1EC;--white:#FAFAF8;--dark:#171714;--stone:#9A9490;--sand:#BFB49A;--fs:'Cormorant Garamond',serif;--fb:'Jost',sans-serif;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--dark);font-family:var(--fb);font-weight:300;overflow-x:hidden;cursor:none}
+#cur{position:fixed;width:6px;height:6px;background:var(--dark);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .25s,height .25s}
+#cur.h{width:36px;height:36px;background:transparent;border:1px solid var(--dark)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:24px 52px;display:flex;justify-content:space-between;align-items:center;background:rgba(244,241,236,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(23,23,20,.06)}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo img{height:36px;width:auto;filter:invert(1)}
+.nav-name{font-family:var(--fb);font-weight:200;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--dark)}
+.nav-back{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);text-decoration:none;display:flex;align-items:center;gap:10px;transition:color .3s}
+.nav-back:hover{color:var(--dark)}
+.nav-back::before{content:'←'}
+
+/* HERO */
+.proj-hero{height:80vh;min-height:500px;position:relative;overflow:hidden;margin-top:0}
+.proj-hero img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.75)}
+.proj-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(23,23,20,.6) 0%,transparent 50%)}
+.proj-hero-info{position:absolute;bottom:0;left:0;right:0;padding:52px}
+.proj-tag{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--sand);margin-bottom:12px}
+.proj-title{font-family:var(--fs);font-size:clamp(52px,9vw,120px);font-weight:300;color:var(--white);line-height:.88}
+
+/* META BAR */
+.meta-bar{display:flex;gap:0;border-bottom:1px solid rgba(23,23,20,.08);background:var(--white)}
+.meta-item{flex:1;padding:24px 32px;border-right:1px solid rgba(23,23,20,.08)}
+.meta-item:last-child{border-right:none}
+.meta-item label{display:block;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);margin-bottom:6px}
+.meta-item span{font-size:13px;color:var(--dark);font-weight:300}
+
+/* DESCRIPTION */
+.proj-desc{padding:80px 52px;display:grid;grid-template-columns:300px 1fr;gap:80px;max-width:1280px;margin:0 auto}
+.proj-desc-lbl{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--stone);padding-top:4px}
+.proj-desc-body p{font-size:15px;line-height:2.1;color:var(--stone);max-width:620px}
+
+/* GALLERY */
+.gallery{padding:0 3px 3px}
+.gallery-row{display:grid;gap:3px;margin-bottom:3px}
+.gallery-row.r2{grid-template-columns:1fr 1fr}
+.gallery-row.r3{grid-template-columns:1fr 1fr 1fr}
+.gallery-row.r-7-5{grid-template-columns:7fr 5fr}
+.gallery-row.r-5-7{grid-template-columns:5fr 7fr}
+.gallery-row.r1{grid-template-columns:1fr}
+.gimg{overflow:hidden;display:block}
+.gimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.gimg:hover img{transform:scale(1.03)}
+.gimg.tall{aspect-ratio:3/4}
+.gimg.wide{aspect-ratio:16/8}
+.gimg.sq{aspect-ratio:1/1}
+.gimg.cinema{aspect-ratio:21/8}
+
+/* BEFORE/AFTER */
+.ba-section{padding:0 3px 3px}
+.ba-title{padding:48px 52px 24px;font-family:var(--fs);font-size:clamp(28px,4vw,48px);font-weight:300;font-style:italic}
+.ba-wrap{position:relative;overflow:hidden;cursor:ew-resize;user-select:none;aspect-ratio:16/8}
+.ba-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba-after-img{z-index:1}
+.ba-before-img{z-index:2;clip-path:inset(0 50% 0 0)}
+.ba-handle{position:absolute;top:0;bottom:0;left:50%;z-index:3;width:2px;background:white;cursor:ew-resize}
+.ba-handle-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;background:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--dark)}
+.ba-lbl{position:absolute;z-index:4;bottom:20px;font-size:9px;letter-spacing:.2em;text-transform:uppercase;background:rgba(0,0,0,.5);color:white;padding:5px 10px}
+.ba-lbl.left{left:20px}
+.ba-lbl.right{right:20px}
+
+/* NAV PROJECTS */
+.proj-nav{padding:72px 52px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(23,23,20,.08)}
+.proj-nav a{text-decoration:none;display:flex;flex-direction:column;gap:6px}
+.proj-nav-lbl{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone)}
+.proj-nav-name{font-family:var(--fs);font-size:clamp(20px,3vw,36px);font-weight:300;color:var(--dark);transition:color .3s}
+.proj-nav a:hover .proj-nav-name{color:var(--stone)}
+.proj-nav a.next{text-align:right}
+.proj-nav-home{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);text-decoration:none;transition:color .3s}
+.proj-nav-home:hover{color:var(--dark)}
+
+/* FOOTER */
+footer{background:var(--dark);padding:24px 52px;display:flex;justify-content:space-between;align-items:center}
+footer span{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,250,248,.22)}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1)}
+.rv.vis{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}
+
+@media(max-width:768px){
+  nav{padding:16px 24px}
+  .proj-hero{height:60vh}
+  .proj-hero-info{padding:32px 24px}
+  .meta-bar{flex-wrap:wrap}
+  .meta-item{flex:1 1 50%;border-right:none;border-bottom:1px solid rgba(23,23,20,.08);padding:18px 24px}
+  .proj-desc{grid-template-columns:1fr;padding:56px 24px;gap:20px}
+  .gallery-row.r2,.gallery-row.r3,.gallery-row.r-7-5,.gallery-row.r-5-7{grid-template-columns:1fr}
+  .proj-nav{padding:48px 24px;flex-direction:column;gap:32px;text-align:center}
+  footer{flex-direction:column;gap:8px;padding:20px;text-align:center}
+}
+</style>
+</head>
+<body>
+<div id="cur"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="img/logo_mono.png" alt="Berchesi Architecture"/>
+    <span class="nav-name">Architecture & Interiorism</span>
+  </a>
+  <a href="index.html#projets" class="nav-back">Tous les projets</a>
+</nav>
+
+<!-- HERO -->
+<div class="proj-hero" style="margin-top:73px">
+  <img src="img/ja_hero.jpg" alt="Maison JA — Rénovation intérieure Sames Pays Basque"/>
+  <div class="proj-hero-overlay"></div>
+  <div class="proj-hero-info">
+    <p class="proj-tag">Rénovation intérieure — Pays Basque</p>
+    <h1 class="proj-title">Maison JA</h1>
+  </div>
+</div>
+
+<!-- META -->
+<div class="meta-bar">
+  <div class="meta-item"><label>Lieu</label><span>Sames, Pays Basque</span></div>
+  <div class="meta-item"><label>Type</label><span>Rénovation intérieure</span></div>
+  <div class="meta-item"><label>Mission</label><span>Architecture & Interiorism</span></div>
+  <div class="meta-item"><label>Statut</label><span>Livré</span></div>
+</div>
+
+<!-- DESCRIPTION -->
+<div class="proj-desc">
+  <p class="proj-desc-lbl rv">Description</p>
+  <div class="proj-desc-body rv d1">
+    <p>Rénovation complète d'une maison individuelle au bord de la Nive à Sames, dans le Pays Basque. Le projet vise à révéler le caractère patrimonial du bâti existant tout en y intégrant une écriture contemporaine maîtrisée — un équilibre entre matériaux bruts et confort actuel.</p>
+    <br/>
+    <p>La pierre apparente, la charpente bois et la cheminée contemporaine forment la colonne vertébrale matérielle du projet. Le mobilier sur mesure, les niches éclairées et les luminaires sélectionnés constituent l'interiorisme de la maison — traité comme une continuité de l'architecture.</p>
+    <br/>
+    <p>Mission complète : conception architecturale et aménagement intérieur, de l'esquisse à la livraison.</p>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div class="gallery">
+  <div class="gallery-row r-7-5" style="align-items:stretch">
+    <div class="gimg rv" style="aspect-ratio:auto;min-height:420px"><img src="img/ja_2.jpg" alt="Maison JA — Salon pierre et bois"/></div>
+    <div class="gimg tall rv d1"><img src="img/ja_3.jpg" alt="Maison JA — Living cheminée"/></div>
+  </div>
+  <div class="gallery-row r3">
+    <div class="gimg tall rv"><img src="img/ja_4.jpg" alt="Maison JA — Séjour cheminée contemporaine"/></div>
+    <div class="gimg tall rv d1"><img src="img/ja_5.jpg" alt="Maison JA — Vue vers la Nive"/></div>
+    <div class="gimg tall rv d2"><img src="img/ja_6.jpg" alt="Maison JA — Salle à manger"/></div>
+  </div>
+  <div class="gallery-row r-5-7" style="align-items:stretch">
+    <div class="gimg rv" style="aspect-ratio:auto;min-height:380px"><img src="img/ja_7.jpg" alt="Maison JA — Ambiance nocturne"/></div>
+    <div class="gimg rv d1" style="aspect-ratio:auto;min-height:380px"><img src="img/ja_8.jpg" alt="Maison JA — Niche éclairée"/></div>
+  </div>
+  <div class="gallery-row r3">
+    <div class="gimg sq rv"><img src="img/ja_9.jpg" alt="Maison JA — Chambre tête de lit"/></div>
+    <div class="gimg sq rv d1"><img src="img/ja_10.jpg" alt="Maison JA — Pierre apparente"/></div>
+    <div class="gimg sq rv d2"><img src="img/ja_11.jpg" alt="Maison JA — Détail accès pierre"/></div>
+  </div>
+</div>
+
+<!-- NAV PROJECTS -->
+<div class="proj-nav">
+  <a href="projet-acqs.html" class="prev">
+    <span class="proj-nav-lbl">← Projet précédent</span>
+    <span class="proj-nav-name">ACQS Arena</span>
+  </a>
+  <a href="index.html#projets" class="proj-nav-home">Tous les projets</a>
+  <a href="projet-mi.html" class="next">
+    <span class="proj-nav-lbl">Projet suivant →</span>
+    <span class="proj-nav-name">Maison MI</span>
+  </a>
+</div>
+
+<footer>
+  <span>© 2025 Berchesi / Architecture & Interiorism</span>
+  <span>Saint-Paul-lès-Dax, Landes</span>
+  <span>Architecte DPLG N°091339</span>
+</footer>
+
+<script>
+const cur=document.getElementById('cur');
+document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
+document.querySelectorAll('a,.gimg').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cur.classList.add('h'));
+  el.addEventListener('mouseleave',()=>cur.classList.remove('h'));
+});
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});},{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

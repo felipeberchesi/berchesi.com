@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>ACQS Arena — Projet TFG Dax | Berchesi Architecture</title>
+<meta name="description" content="ACQS Arena — Salle multi-usage pour la ville de Dax. 3200 places, concerts et sports. Projet académique TFG UPV/EHU 2022. Berchesi Architecture."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Jost:wght@200;300;400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="projet.css"/>
+</head>
+<body>
+<div id="cur"></div>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="img/logo_mono.png" alt="Berchesi Architecture"/><span class="nav-name">Architecture & Interiorism</span></a>
+  <a href="index.html#projets" class="nav-back">← Tous les projets</a>
+</nav>
+<div class="proj-hero">
+  <img src="img/acqs_hero.jpg" alt="ACQS Arena Dax" style="object-position:center 38%"/>
+  <div class="phov"></div>
+  <div class="phi">
+    <p class="proj-tag">Projet académique TFG — Dax, Landes</p>
+    <h1 class="proj-title">ACQS Arena</h1>
+  </div>
+</div>
+<div class="meta-bar">
+  <div class="mi"><label>Lieu</label><span>Dax, Landes</span></div>
+  <div class="mi"><label>Type</label><span>Équipement public — Salle multi-usage</span></div>
+  <div class="mi"><label>Capacité</label><span>3 200 – 3 500 places</span></div>
+  <div class="mi"><label>Année</label><span>TFG UPV/EHU — 2022</span></div>
+</div>
+<div class="proj-desc">
+  <p class="pdlbl rv">Description</p>
+  <div class="pdbody rv d1">
+    <p>Projet de création d'une salle multi-usage pour la ville de Dax — un équipement polyvalent capable d'accueillir concerts, spectacles et événements sportifs (basketball, handball). La ville de Dax ne dispose aujourd'hui d'aucune salle capable d'accueillir de tels événements à cette échelle.</p>
+    <p>Situé face aux arènes, sur le terrain de l'ancien Jaï Alaï, le projet comprend une salle principale de 3 200 à 3 500 places avec scène modulable, loges artistes et sportifs, écran géant et vestiaires. Des espaces publics viennent compléter le programme : restaurant, pop-up store, parking souterrain, bureaux et salles polyvalentes à louer.</p>
+    <p>L'enveloppe en bois sombre, le volume circulaire et la transparence de la façade intermédiaire donnent à l'édifice une identité forte, ancrée dans les matériaux du territoire. En septembre 2025, la ville de Grand Dax a lancé un concours d'architecture pour une salle de 3 400 places sur ce même site — validant le diagnostic établi en 2022.</p>
+    <p><em>Projet de fin de grade (TFG) — Université du Pays Basque UPV/EHU. Tuteur : Jose Antonio Barea.</em></p>
+  </div>
+</div>
+<div class="gallery">
+  <div class="gr r1"><div class="gi cinema rv"><img src="img/acqs_2.jpg" alt="ACQS Arena vue extérieure atardecer"/></div></div>
+  <div class="gr r2">
+    <div class="gi med rv"><img src="img/acqs_3.jpg" alt="ACQS Arena configuration basketball"/></div>
+    <div class="gi med rv d1"><img src="img/acqs_4.jpg" alt="ACQS Arena configuration concert"/></div>
+  </div>
+</div>
+<div class="pnav">
+  <a href="projet-pi.html" class="pv"><span class="pnav-lbl">← Projet précédent</span><span class="pnav-name">Maison PI</span></a>
+  <a href="index.html#projets" class="pnav-home">Tous les projets</a>
+  <a href="projet-ja.html" class="nx"><span class="pnav-lbl">Projet suivant →</span><span class="pnav-name">Maison JA</span></a>
+</div>
+<footer><span>© 2025 Berchesi / Architecture & Interiorism</span><span>Saint-Paul-lès-Dax, Landes</span><span>Architecte DPLG N°091339</span></footer>
+<script>
+const cur=document.getElementById('cur');
+document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
+document.querySelectorAll('a,.gi').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('h'));el.addEventListener('mouseleave',()=>cur.classList.remove('h'));});
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});},{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
