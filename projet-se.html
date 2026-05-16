@@ -81,11 +81,6 @@ document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.styl
 document.querySelectorAll('a,.gi').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('h'));el.addEventListener('mouseleave',()=>cur.classList.remove('h'));});
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});},{threshold:.08});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
-const cur=document.getElementById('cur');
-document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
-document.querySelectorAll('a,.gi').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('h'));el.addEventListener('mouseleave',()=>cur.classList.remove('h'));});
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});},{threshold:.08});
-document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 const baw=document.getElementById('baw1'),bab=document.getElementById('bab1'),bah=document.getElementById('bah1');
 if(baw){
   let drag=false;
