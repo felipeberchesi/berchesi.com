@@ -34,7 +34,17 @@
   <p class="pdlbl rv">Description</p>
   <div class="pdbody rv d1"><p>Extension et rénovation d'une maison à Seyresse. Le projet comprend la création d'un nouvel espace de vie, d'un bureau et d'une suite parentale à l'étage, grâce à une extension implantée à l'est de la maison existante.</p><p>Pour assurer l'unité architecturale, l'ensemble de la maison a été re-enduit. La toiture de l'extension a été conçue en trois pentes pour assurer une transition fluide avec le volume existant. Le plancher est en bois avec des solives apparentes qui apportent caractère et chaleur à l'espace.</p><p>L'aménagement intérieur est traité comme une extension de l'architecture : bar vert forêt avec arche et laiton, escalier dramatique aux parois vert profond et lumières en laiton, salle de bain en travertin et mobilier sur mesure. Une transformation entre modernité, confort et continuité architecturale.</p></div>
 </div>
-<div class="gallery"><div class="gr r75" style="align-items:stretch"><div class="gi rv" style="aspect-ratio:auto;min-height:420px"><img src="img/he_2.jpg" alt="Maison HE escalier vert"/></div><div class="gi tall rv d1"><img src="img/he_3.jpg" alt="Maison HE bar arche"/></div></div><div class="gr r3"><div class="gi sq rv"><img src="img/he_4.jpg" alt="Maison HE façade"/></div><div class="gi sq rv d1"><img src="img/he_5.jpg" alt="Maison HE salle de bain travertin"/></div><div class="gi sq rv d2"><img src="img/he_6.jpg" alt="Maison HE bar niches"/></div></div></div>
+<div class="ba-section">
+  <p class="ba-title">Avant / Après</p>
+  <div class="ba-wrap" id="baw1">
+    <img class="ba-after" src="img/he_3.jpg" alt="Maison HE après"/>
+    <img class="ba-before" id="bab1" src="img/he_avant.jpg" alt="Maison HE avant"/>
+    <div class="ba-hdl" id="bah1"><div class="ba-btn">◀▶</div></div>
+    <span class="ba-lb l">AVANT</span>
+    <span class="ba-lb r">APRÈS</span>
+  </div>
+</div>
+<div class="gallery"><div class="gr r3"><div class="gi sq rv"><img src="img/he_4.jpg" alt="Maison HE façade"/></div><div class="gi sq rv d1"><img src="img/he_5.jpg" alt="Maison HE salle de bain travertin"/></div><div class="gi sq rv d2"><img src="img/he_6.jpg" alt="Maison HE bar niches"/></div></div><div class="gr r1"><div class="gi med rv"><img src="img/he_7.jpg" alt="Maison HE salon rotin"/></div></div><div class="gr r2"><div class="gi sq rv"><img src="img/he_8.jpg" alt="Maison HE vasque pierre"/></div><div class="gi sq rv d1"><img src="img/he_9.jpg" alt="Maison HE suite parentale"/></div></div></div>
 
 <div class="pnav">
   <a href="projet-la.html" class="pv"><span class="pnav-lbl">← Projet précédent</span><span class="pnav-name">Maison LA</span></a>
@@ -48,15 +58,14 @@ document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.styl
 document.querySelectorAll('a,.gi').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('h'));el.addEventListener('mouseleave',()=>cur.classList.remove('h'));});
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});},{threshold:.08});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
-const bw=document.querySelector('.ba-wrap');
-if(bw){
-  const bef=bw.querySelector('.ba-before'),hdl=bw.querySelector('.ba-hdl');
+const baw=document.getElementById('baw1'),bab=document.getElementById('bab1'),bah=document.getElementById('bah1');
+if(baw){
   let drag=false;
-  function upd(x){const r=bw.getBoundingClientRect();const p=Math.max(0,Math.min(100,(x-r.left)/r.width*100));bef.style.clipPath='inset(0 '+(100-p)+'% 0 0)';hdl.style.left=p+'%';}
-  bw.addEventListener('mousedown',e=>{drag=true;upd(e.clientX);});
+  function upd(x){const r=baw.getBoundingClientRect();const p=Math.max(0,Math.min(100,(x-r.left)/r.width*100));bab.style.clipPath='inset(0 '+(100-p)+'% 0 0)';bah.style.left=p+'%';}
+  baw.addEventListener('mousedown',e=>{drag=true;upd(e.clientX);});
   window.addEventListener('mousemove',e=>{if(drag)upd(e.clientX);});
   window.addEventListener('mouseup',()=>drag=false);
-  bw.addEventListener('touchstart',e=>{drag=true;upd(e.touches[0].clientX);},{passive:true});
+  baw.addEventListener('touchstart',e=>{drag=true;upd(e.touches[0].clientX);},{passive:true});
   window.addEventListener('touchmove',e=>{if(drag)upd(e.touches[0].clientX);},{passive:true});
   window.addEventListener('touchend',()=>drag=false);
 }

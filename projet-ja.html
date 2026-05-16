@@ -148,6 +148,18 @@ footer span{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rg
   </div>
 </div>
 
+
+<div class="ba-section">
+  <p class="ba-title">Avant / Après</p>
+  <div class="ba-wrap" id="baw1">
+    <img class="ba-after-img" src="img/ja_10.jpg" alt="Maison JA après"/>
+    <img class="ba-before-img" id="bab1" src="img/ja_9.jpg" alt="Maison JA avant"/>
+    <div class="ba-handle" id="bah1"><div class="ba-handle-btn">◀▶</div></div>
+    <span class="ba-lbl left">AVANT</span>
+    <span class="ba-lbl right">APRÈS</span>
+  </div>
+</div>
+
 <!-- GALLERY -->
 <div class="gallery">
   <div class="gallery-row r-7-5" style="align-items:stretch">
@@ -163,15 +175,11 @@ footer span{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rg
     <div class="gimg rv" style="aspect-ratio:auto;min-height:380px"><img src="img/ja_7.jpg" alt="Maison JA — Ambiance nocturne"/></div>
     <div class="gimg rv d1" style="aspect-ratio:auto;min-height:380px"><img src="img/ja_8.jpg" alt="Maison JA — Niche éclairée"/></div>
   </div>
-  <div class="gallery-row r3">
-    <div class="gimg sq rv"><img src="img/ja_9.jpg" alt="Maison JA — Chambre tête de lit"/></div>
-    <div class="gimg sq rv d1"><img src="img/ja_10.jpg" alt="Maison JA — Pierre apparente"/></div>
-    <div class="gimg sq rv d2"><img src="img/ja_11.jpg" alt="Maison JA — Détail accès pierre"/></div>
+  <div class="gallery-row r1">
+    <div class="gimg cinema rv"><img src="img/hero_ja.jpg" alt="Maison JA — Vue générale"/></div>
   </div>
 </div>
 
-<!-- NAV PROJECTS -->
-<div class="proj-nav">
   <a href="projet-acqs.html" class="prev">
     <span class="proj-nav-lbl">← Projet précédent</span>
     <span class="proj-nav-name">ACQS Arena</span>
@@ -198,6 +206,19 @@ document.querySelectorAll('a,.gimg').forEach(el=>{
 });
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});},{threshold:.08});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+function initSlider(wrapId,beforeId,handleId){
+  const baw=document.getElementById(wrapId),bab=document.getElementById(beforeId),bah=document.getElementById(handleId);
+  if(!baw||!bab||!bah)return;
+  let drag=false;
+  function upd(x){const r=baw.getBoundingClientRect();const p=Math.max(0,Math.min(100,(x-r.left)/r.width*100));bab.style.clipPath='inset(0 '+(100-p)+'% 0 0)';bah.style.left=p+'%';}
+  baw.addEventListener('mousedown',e=>{drag=true;upd(e.clientX);});
+  window.addEventListener('mousemove',e=>{if(drag)upd(e.clientX);});
+  window.addEventListener('mouseup',()=>drag=false);
+  baw.addEventListener('touchstart',e=>{drag=true;upd(e.touches[0].clientX);},{passive:true});
+  window.addEventListener('touchmove',e=>{if(drag)upd(e.touches[0].clientX);},{passive:true});
+  window.addEventListener('touchend',()=>drag=false);
+}
+initSlider('baw1','bab1','bah1');
 </script>
 </body>
 </html>

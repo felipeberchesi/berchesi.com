@@ -34,6 +34,16 @@
   <p class="pdlbl rv">Description</p>
   <div class="pdbody rv d1"><p>Extension d'une maison individuelle à Hossegor, dans les Landes. Le programme crée quatre nouveaux espaces nuit, dont une suite parentale, greffés sur le rez-de-chaussée existant entièrement repensé.</p><p>La construction articule maçonnerie traditionnelle en rez-de-chaussée et ossature bois à l'étage, avec un habillage en pin traité pour l'ensemble de la façade. Le projet a été pensé en totale symbiose avec la flore existante — l'extension est construite autour des chênes lièges du jardin, espèce emblématique des Landes, afin de les préserver et les valoriser.</p><p>Le choix du pin local, la terrasse bois et la végétation dense font de cette maison un projet pleinement ancré dans son territoire.</p></div>
 </div>
+<div class="ba-section">
+  <p class="ba-title">Avant / Après</p>
+  <div class="ba-wrap" id="baw1">
+    <img class="ba-after" src="img/la_hero.jpg" alt="Maison LA après"/>
+    <img class="ba-before" id="bab1" src="img/la_before2.jpg" alt="Maison LA avant"/>
+    <div class="ba-hdl" id="bah1"><div class="ba-btn">◀▶</div></div>
+    <span class="ba-lb l">AVANT</span>
+    <span class="ba-lb r">APRÈS</span>
+  </div>
+</div>
 <div class="gallery"><div class="gr r57" style="align-items:stretch"><div class="gi tall rv"><img src="img/la_2.jpg" alt="Maison LA façade pin"/></div><div class="gi rv d1" style="aspect-ratio:auto;min-height:0"><img src="img/la_3.jpg" alt="Maison LA terrasse"/></div></div><div class="gr r3"><div class="gi sq rv"><img src="img/la_4.jpg" alt="Maison LA ensemble"/></div><div class="gi sq rv d1"><img src="img/la_5.jpg" alt="Maison LA volumétrie"/></div><div class="gi sq rv d2"><img src="img/la_6.jpg" alt="Maison LA détail volet"/></div></div><div class="gr r2"><div class="gi med rv"><img src="img/la_7.jpg" alt="Maison LA chantier"/></div><div class="gi med rv d1"><img src="img/la_8.jpg" alt="Maison LA ossature bois"/></div></div></div>
 
 <div class="pnav">
@@ -48,15 +58,14 @@ document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.styl
 document.querySelectorAll('a,.gi').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('h'));el.addEventListener('mouseleave',()=>cur.classList.remove('h'));});
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});},{threshold:.08});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
-const bw=document.querySelector('.ba-wrap');
-if(bw){
-  const bef=bw.querySelector('.ba-before'),hdl=bw.querySelector('.ba-hdl');
+const baw=document.getElementById('baw1'),bab=document.getElementById('bab1'),bah=document.getElementById('bah1');
+if(baw){
   let drag=false;
-  function upd(x){const r=bw.getBoundingClientRect();const p=Math.max(0,Math.min(100,(x-r.left)/r.width*100));bef.style.clipPath='inset(0 '+(100-p)+'% 0 0)';hdl.style.left=p+'%';}
-  bw.addEventListener('mousedown',e=>{drag=true;upd(e.clientX);});
+  function upd(x){const r=baw.getBoundingClientRect();const p=Math.max(0,Math.min(100,(x-r.left)/r.width*100));bab.style.clipPath='inset(0 '+(100-p)+'% 0 0)';bah.style.left=p+'%';}
+  baw.addEventListener('mousedown',e=>{drag=true;upd(e.clientX);});
   window.addEventListener('mousemove',e=>{if(drag)upd(e.clientX);});
   window.addEventListener('mouseup',()=>drag=false);
-  bw.addEventListener('touchstart',e=>{drag=true;upd(e.touches[0].clientX);},{passive:true});
+  baw.addEventListener('touchstart',e=>{drag=true;upd(e.touches[0].clientX);},{passive:true});
   window.addEventListener('touchmove',e=>{if(drag)upd(e.touches[0].clientX);},{passive:true});
   window.addEventListener('touchend',()=>drag=false);
 }
