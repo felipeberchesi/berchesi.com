@@ -44,7 +44,17 @@
     <span class="ba-lb r">APRÈS</span>
   </div>
 </div>
-<div class="gallery"><div class="gr r57" style="align-items:stretch"><div class="gi tall rv"><img src="img/la_2.jpg" alt="Maison LA façade pin"/></div><div class="gi rv d1" style="aspect-ratio:auto;min-height:0"><img src="img/la_3.jpg" alt="Maison LA terrasse"/></div></div><div class="gr r3"><div class="gi sq rv"><img src="img/la_4.jpg" alt="Maison LA ensemble"/></div><div class="gi sq rv d1"><img src="img/la_5.jpg" alt="Maison LA volumétrie"/></div><div class="gi sq rv d2"><img src="img/la_6.jpg" alt="Maison LA détail volet"/></div></div><div class="gr r2"><div class="gi med rv"><img src="img/la_7.jpg" alt="Maison LA chantier"/></div><div class="gi med rv d1"><img src="img/la_8.jpg" alt="Maison LA ossature bois"/></div></div></div>
+<div class="gallery"><div class="gr r57" style="align-items:stretch"><div class="gi tall rv"><img src="img/la_2.jpg" alt="Maison LA façade pin"/></div><div class="gi rv d1" style="aspect-ratio:auto;min-height:0"><img src="img/la_3.jpg" alt="Maison LA terrasse"/></div></div><div class="gr r3"><div class="gi sq rv"><img src="img/la_4.jpg" alt="Maison LA ensemble"/></div><div class="gi sq rv d1"><img src="img/la_5.jpg" alt="Maison LA volumétrie"/></div><div class="gi sq rv d2"><img src="img/la_6.jpg" alt="Maison LA détail volet"/></div></div></div>
+
+<div class="ba-section">
+  <div class="ba-wrap" id="baw2">
+    <img class="ba-after" src="img/la_2.jpg" alt="Maison LA après"/>
+    <img class="ba-before" id="bab2" src="img/la_7.jpg" alt="Maison LA avant chantier"/>
+    <div class="ba-hdl" id="bah2"><div class="ba-btn">◀▶</div></div>
+    <span class="ba-lb l">AVANT</span>
+    <span class="ba-lb r">APRÈS</span>
+  </div>
+</div>
 
 <div class="pnav">
   <a href="projet-mi.html" class="pv"><span class="pnav-lbl">← Projet précédent</span><span class="pnav-name">Maison MI</span></a>
@@ -68,6 +78,17 @@ if(baw){
   baw.addEventListener('touchstart',e=>{drag=true;upd(e.touches[0].clientX);},{passive:true});
   window.addEventListener('touchmove',e=>{if(drag)upd(e.touches[0].clientX);},{passive:true});
   window.addEventListener('touchend',()=>drag=false);
+}
+const baw2=document.getElementById('baw2'),bab2=document.getElementById('bab2'),bah2=document.getElementById('bah2');
+if(baw2){
+  let drag2=false;
+  function upd2(x){const r=baw2.getBoundingClientRect();const p=Math.max(0,Math.min(100,(x-r.left)/r.width*100));bab2.style.clipPath='inset(0 '+(100-p)+'% 0 0)';bah2.style.left=p+'%';}
+  baw2.addEventListener('mousedown',e=>{drag2=true;upd2(e.clientX);});
+  window.addEventListener('mousemove',e=>{if(drag2)upd2(e.clientX);});
+  window.addEventListener('mouseup',()=>drag2=false);
+  baw2.addEventListener('touchstart',e=>{drag2=true;upd2(e.touches[0].clientX);},{passive:true});
+  window.addEventListener('touchmove',e=>{if(drag2)upd2(e.touches[0].clientX);},{passive:true});
+  window.addEventListener('touchend',()=>drag2=false);
 }
 </script>
 </body>

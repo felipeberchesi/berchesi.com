@@ -57,10 +57,8 @@
     <div class="gi tall rv d1"><img src="img/pi_4.jpg" alt="Maison PI mezzanine bibliothèque"/></div>
     <div class="gi tall rv d2"><img src="img/pi_5.jpg" alt="Maison PI entrée escalier"/></div>
   </div>
-  <div class="gr r3">
+  <div class="gr r1">
     <div class="gi sq rv"><img src="img/pi_before2.jpg" alt="Maison PI avant état initial"/></div>
-    <div class="gi sq rv d1"><img src="img/pi_before3.jpg" alt="Maison PI avant grange"/></div>
-    <div class="gi sq rv d2"><img src="img/pi_before4.jpg" alt="Maison PI avant cuisine"/></div>
   </div>
 </div>
 
@@ -70,6 +68,26 @@
     <img class="ba-after" src="img/pi_apres1.jpg" alt="Maison PI après — séjour double hauteur"/>
     <img class="ba-before" id="bab2" src="img/pi_avant1.jpg" alt="Maison PI avant — grange"/>
     <div class="ba-hdl" id="bah2"><div class="ba-btn">◀▶</div></div>
+    <span class="ba-lb l">AVANT</span>
+    <span class="ba-lb r">APRÈS</span>
+  </div>
+</div>
+
+<!-- BEFORE/AFTER SLIDER 4 -->
+<div class="ba-section">
+  <div class="ba-wrap" id="baw4">
+    <img class="ba-after" src="img/pi_4.jpg" alt="Maison PI après — mezzanine"/>
+    <img class="ba-before" id="bab4" src="img/pi_before4.jpg" alt="Maison PI avant — cuisine"/>
+    <div class="ba-hdl" id="bah4"><div class="ba-btn">◀▶</div></div>
+    <span class="ba-lb l">AVANT</span>
+    <span class="ba-lb r">APRÈS</span>
+  </div>
+</div>
+<div class="ba-section">
+  <div class="ba-wrap" id="baw3">
+    <img class="ba-after" src="img/pi_hero.jpg" alt="Maison PI après — extérieur"/>
+    <img class="ba-before" id="bab3" src="img/pi_before3.jpg" alt="Maison PI avant — extérieur"/>
+    <div class="ba-hdl" id="bah3"><div class="ba-btn">◀▶</div></div>
     <span class="ba-lb l">AVANT</span>
     <span class="ba-lb r">APRÈS</span>
   </div>
@@ -101,6 +119,8 @@ function initSlider(wrapId,beforeId,handleId){
 }
 initSlider('baw1','bab1','bah1');
 initSlider('baw2','bab2','bah2');
+initSlider('baw3','bab3','bah3');
+initSlider('baw4','bab4','bah4');
 </script>
 </body>
 </html>
